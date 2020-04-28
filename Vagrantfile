@@ -28,6 +28,7 @@ Vagrant.configure("2") do |config|
       config.vm.provision :shell, :inline => "mkdir -p /root/.ssh && cp authorized_keys /root/.ssh/", :privileged => true
       config.vm.provision "shell", path: "scripts/install-docker.sh", :privileged => true
       config.vm.provision "shell", path: "scripts/install-kube.sh", :privileged => true
+      # config.vm.provision "shell", path: "scripts/install-ceph-client.sh", :privileged => true
     end
   end
 
@@ -47,5 +48,7 @@ Vagrant.configure("2") do |config|
     config.vm.provision "shell", path: "scripts/install-docker.sh", :privileged => true
     config.vm.provision "shell", path: "scripts/install-kube.sh", :privileged => true
     config.vm.provision "shell", path: "scripts/init.sh", :privileged => true
+    # config.vm.provision "shell", path: "scripts/install-ceph-client.sh", :privileged => true
+    # config.vm.provision "shell", path: "scripts/init.sh", :privileged => true
   end
 end
